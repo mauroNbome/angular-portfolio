@@ -12,23 +12,22 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.setLangFromLS();
-    console.log(this.lang);
   }
 
-  toggleSidenav() {
+  toggleSidenav(): void {
     this.SidenavService.isOpened = !this.SidenavService.isOpened;
   }
 
-  changeLang(event) {
+  changeLang(event: string): void {
     this.lang = event;
     this.saveLangToLS();
   }
 
-  setLangFromLS() {
+  setLangFromLS(): void {
     this.lang = localStorage.getItem('lang') || 'en';
   }
 
-  saveLangToLS() {
+  saveLangToLS(): void {
     localStorage.setItem('lang', this.lang);
   }
 }
