@@ -11,8 +11,10 @@
     mat-icon-button
     class="example-icon"
     aria-label="Example icon-button with share icon"
+    (click)="toggleColorMode()"
   >
-    <mat-icon>share</mat-icon>
+    <mat-icon *ngIf="colorMode === 'dark'">dark_mode</mat-icon>
+    <mat-icon *ngIf="colorMode === 'light'">light_mode</mat-icon>
   </button>
   <button mat-icon-button class="example-icon" (click)="toggleSidenav()">
     <mat-icon>menu</mat-icon>
