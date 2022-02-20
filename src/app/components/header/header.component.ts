@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SidenavService } from '.././sidenav/sidenav.service';
+import { Links } from '../../models/header.models';
+import { Router } from '@angular/router';
+import { links } from './header.data';
+import { UiService } from '../../services/ui.service';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +12,22 @@ import { SidenavService } from '.././sidenav/sidenav.service';
 })
 export class HeaderComponent implements OnInit {
   lang: string;
+  languages = [
+    { label: 'Español', value: 'es', img: '../../../assets/flags/es.svg' },
+    { label: 'English', value: 'en', img: '../../../assets/flags/gb.svg' },
+    { label: 'Portuguese', value: 'pt', img: '../../../assets/flags/pt.svg' },
+  ];
+
   colorMode: string = 'light';
-  constructor(private SidenavService: SidenavService) {}
+
+  activeLink: string = '';
+  links: Links[] = links;
+
+  constructor(
+    private SidenavService: SidenavService,
+    private router: Router,
+    public UI: UiService
+  ) {}
 
   ngOnInit(): void {
     this.setLangFromLS();
@@ -35,7 +53,6 @@ export class HeaderComponent implements OnInit {
   }
 
   // Handling of darkmode
-
   toggleColorMode(): void {
     if (this.colorMode === 'dark') {
       this.colorMode = 'light';
@@ -56,5 +73,10 @@ export class HeaderComponent implements OnInit {
 
   saveColorModeToLS(): void {
     localStorage.setItem('cm', this.colorMode);
+  }
+
+  redirectTo(route: string): void {
+    this.activeLink = route;
+    this.router.navigate([route]);
   }
 }

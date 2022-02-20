@@ -4,10 +4,17 @@ import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from '../material.module';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [HeaderComponent, SidenavComponent],
-  imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+  ],
   exports: [HeaderComponent, SidenavComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

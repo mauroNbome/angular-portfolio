@@ -1,12 +1,47 @@
+.logo-container {
+  img {
+    cursor: pointer;
+  }
+}
+
+.menu-items-wrap {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  margin-left: 5%;
+
+  .item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5%;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+    text-align: center;
+    color: #fff;
+  }
+
+  .active-item {
+    color: #dea01e !important;
+  }
+}
+
 .spacer {
   flex: 1 1 auto;
 }
 
 mat-toolbar {
   padding: 0 5%;
+  height: 100px;
+  background-color: #212429;
 }
 
 mat-select {
   border-radius: 2px;
   width: 250px;
+}
+
+.white-button {
+  color: #fff;
 }

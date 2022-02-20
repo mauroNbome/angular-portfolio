@@ -7,7 +7,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ComponentsModule } from './components/components.module';
 
 import { SidenavService } from './components/sidenav/sidenav.service';
-
+import { LayoutsModule } from './layouts/layouts.module';
+import { LayoutModule } from '@angular/cdk/layout';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -15,6 +16,8 @@ import { SidenavService } from './components/sidenav/sidenav.service';
     AppRoutingModule,
     BrowserAnimationsModule,
     ComponentsModule,
+    LayoutsModule,
+    LayoutModule,
   ],
   providers: [SidenavService],
   bootstrap: [AppComponent],
