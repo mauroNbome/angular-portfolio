@@ -1,9 +1,9 @@
 export const links = [
-  { label: 'Home', path: '' },
-  { label: 'About', path: 'about' },
-  { label: 'Portfolio', path: 'portfolio' },
-  { label: 'Blog', path: 'blog' },
-  { label: 'Contact Me', path: 'contactme' },
+  { label: 'Home', path: '', icon: 'home' },
+  { label: 'About', path: 'about', icon: 'favorite_border' },
+  { label: 'Portfolio', path: 'portfolio', icon: 'app_shortcut' },
+  { label: 'Blog', path: 'blog', icon: 'rss_feed' },
+  { label: 'Contact Me', path: 'contactme', icon: 'contact_page' },
 ];
 
 export const languages = [

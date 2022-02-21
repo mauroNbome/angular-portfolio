@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class SidenavService {
+  // Variable to handle sidenav
   public isOpened: boolean = false;
+
   constructor() {}
 }

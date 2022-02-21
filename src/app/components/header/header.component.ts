@@ -12,15 +12,13 @@ import { UiService } from '../../services/ui.service';
 })
 export class HeaderComponent implements OnInit {
   lang: string;
+
   languages = [
     { label: 'Español', value: 'es', img: '../../../assets/flags/es.svg' },
     { label: 'English', value: 'en', img: '../../../assets/flags/gb.svg' },
     { label: 'Portuguese', value: 'pt', img: '../../../assets/flags/pt.svg' },
   ];
 
-  colorMode: string = 'light';
-
-  activeLink: string = '';
   links: Links[] = links;
 
   constructor(
@@ -31,7 +29,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.setLangFromLS();
-    this.setColorModeFromLS();
+    this.UI.setColorModeFromLS();
+
+    console.log(this.lang);
   }
 
   toggleSidenav(): void {
@@ -52,31 +52,12 @@ export class HeaderComponent implements OnInit {
     localStorage.setItem('lang', this.lang);
   }
 
-  // Handling of darkmode
-  toggleColorMode(): void {
-    if (this.colorMode === 'dark') {
-      this.colorMode = 'light';
-    } else {
-      this.colorMode = 'dark';
-    }
-    this.saveColorModeToLS();
-  }
-
-  changeColorMode(event: string): void {
-    this.colorMode = event;
-    this.saveColorModeToLS();
-  }
-
-  setColorModeFromLS(): void {
-    this.colorMode = localStorage.getItem('cm') || 'dark';
-  }
-
-  saveColorModeToLS(): void {
-    localStorage.setItem('cm', this.colorMode);
-  }
-
   redirectTo(route: string): void {
-    this.activeLink = route;
+    this.UI.activeLink = route;
     this.router.navigate([route]);
+  }
+
+  toggleColorMode() {
+    this.UI.toggleColorMode();
   }
 }

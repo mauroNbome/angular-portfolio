@@ -6,6 +6,43 @@
     class="sidenav"
     [fixedInViewport]="true"
   >
-    <span>Sidenav</span>
+    <div class="main-wrap">
+      <div class="header-sid"></div>
+      <div class="body-sid">
+        <div class="menu-items">
+          <div
+            class="menu-item"
+            [class.active-item]="item.path === UI.activeLink"
+            (click)="redirectTo(item.path)"
+            *ngFor="let item of links"
+          >
+            <div class="icontainer">
+              <mat-icon class="material-icons-outlined">
+                {{ item.icon }}
+              </mat-icon>
+            </div>
+            <div class="label">{{ item.label }}</div>
+          </div>
+        </div>
+        <div class="footer-sid">
+          <div class="button-box">
+            <button mat-icon-button>
+              <mat-icon class="white-button">language</mat-icon>
+            </button>
+          </div>
+
+          <div class="button-box">
+            <button mat-icon-button (click)="toggleColorMode()">
+              <mat-icon *ngIf="UI.colorMode === 'dark'" class="white-button"
+                >dark_mode</mat-icon
+              >
+              <mat-icon *ngIf="UI.colorMode === 'light'" class="white-button"
+                >light_mode</mat-icon
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
   </mat-sidenav>
 </mat-sidenav-container>
