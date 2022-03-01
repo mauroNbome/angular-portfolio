@@ -21,14 +21,23 @@
                 {{ item.icon }}
               </mat-icon>
             </div>
-            <div class="label">{{ item.label }}</div>
+            <div class="label">{{ item.labels[UI.lang] }}</div>
           </div>
         </div>
         <div class="footer-sid">
           <div class="button-box">
-            <button mat-icon-button>
+            <button mat-icon-button [matMenuTriggerFor]="aboveMenu">
               <mat-icon class="white-button">language</mat-icon>
             </button>
+            <mat-menu #aboveMenu="matMenu" yPosition="above">
+              <button
+                mat-menu-item
+                *ngFor="let item of languages"
+                (click)="changeLang(item.value)"
+              >
+                {{ item.label }}
+              </button>
+            </mat-menu>
           </div>
 
           <div class="button-box">

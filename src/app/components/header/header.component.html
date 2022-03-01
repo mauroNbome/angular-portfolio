@@ -14,18 +14,25 @@
       *ngFor="let item of links"
       (click)="redirectTo(item.path)"
     >
-      {{ item.label }}
+      {{ item.labels[UI.lang] }}
     </div>
   </div>
 
   <span class="spacer"></span>
 
-  <mat-select [(value)]="lang" [ngClass]="lang" *ngIf="!UI.mobileSize">
-    <mat-option value="option1" *ngFor="let language of languages"
-      >{{ language.label }}
-      <img with="30" height="30" [src]="language.img" />
-    </mat-option>
-  </mat-select>
+  <div class="lang-container" *ngIf="!UI.mobileSize">
+    <img [src]="UI?.activeLang.img" width="40" height="40" />
+
+    <mat-select [(value)]="UI.lang" [ngClass]="UI.lang">
+      <mat-option
+        value="option1"
+        *ngFor="let lang of languages"
+        (click)="changeLang(lang?.value)"
+      >
+        <img with="40" height="40" [src]="lang?.img" />
+      </mat-option>
+    </mat-select>
+  </div>
 
   <button mat-icon-button (click)="toggleColorMode()" *ngIf="!UI.mobileSize">
     <mat-icon *ngIf="UI.colorMode === 'dark'" class="white-button"
@@ -43,17 +50,4 @@
   >
     <mat-icon>menu</mat-icon>
   </button>
-
-  <!-- <button
-    mat-icon-button
-    class="white-button"
-    [matMenuTriggerFor]="menu"
-    *ngIf="UI.mobileSize"
-  >
-    <mat-icon>more_vert</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>Language</button>
-    <button mat-menu-item>Item 2</button>
-  </mat-menu> -->
 </mat-toolbar>

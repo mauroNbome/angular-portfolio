@@ -39,7 +39,33 @@ mat-toolbar {
 
 mat-select {
   border-radius: 2px;
-  width: 250px;
+  width: 50px;
+
+  mat-option {
+    padding: 10px 0;
+    width: 100%;
+
+    .mat-active {
+      background-color: red;
+    }
+  }
+}
+
+.lang-container {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: -5px;
+    right: 21px;
+  }
+}
+
+::ng-deep .mat-option-text {
+  width: 20px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
 }
 
 .white-button {

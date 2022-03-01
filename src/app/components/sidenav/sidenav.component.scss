@@ -14,9 +14,9 @@ mat-sidenav {
 .body-sid {
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
-  height: 76%;
-
+  justify-content: space-between;
+  padding-top: 23px;
+  height: calc(100% - 124px);
   .menu-items {
     display: flex;
     flex-direction: column;
@@ -52,13 +52,13 @@ mat-sidenav {
     display: flex;
     justify-content: space-between;
     border-top: 1px solid #3e4245;
-    height: 70px;
-    margin-top: auto;
+    height: 66px;
 
     .button-box {
       width: 60px;
       height: 60px;
       position: relative;
+      display: flex;
 
       button {
         position: absolute;
@@ -74,11 +74,14 @@ mat-sidenav {
 }
 
 .active-item {
+  background-color: #dea01e !important;
   .label {
-    color: #dea01e !important;
+    // color: #dea01e !important;
+    color: #fff;
   }
   mat-icon {
-    color: #dea01e !important;
+    // color: #dea01e !important;
+    color: #fff;
   }
 }
 
