@@ -28,7 +28,7 @@ export class SidenavComponent implements OnInit {
 
     setTimeout(() => {
       this.SidenavService.isOpened = false;
-    }, 200);
+    }, 100);
   }
 
   toggleColorMode(): void {

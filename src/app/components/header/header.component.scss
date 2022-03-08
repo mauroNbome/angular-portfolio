@@ -40,10 +40,12 @@ mat-toolbar {
 mat-select {
   border-radius: 2px;
   width: 50px;
+  background-color: #282b30 !important;
 
   mat-option {
     padding: 10px 0;
     width: 100%;
+    background-color: #282b30 !important;
 
     .mat-active {
       background-color: red;

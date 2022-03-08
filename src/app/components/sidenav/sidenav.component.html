@@ -35,7 +35,8 @@
                 *ngFor="let item of languages"
                 (click)="changeLang(item.value)"
               >
-                {{ item.label }}
+                <!-- {{ item.label }} -->
+                <img [src]="item.img" width="40" height="40" />
               </button>
             </mat-menu>
           </div>
