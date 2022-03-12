@@ -19,7 +19,7 @@ export class UiService implements OnInit {
   ngOnInit(): void {
     // setLangFromLS()
     // setColorModeFromLS()
-    // Are called from header component.
+    // Those are called from header component.
   }
 
   // Handling of darkmode

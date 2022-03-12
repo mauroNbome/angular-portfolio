@@ -9,6 +9,7 @@ import { ComponentsModule } from './components/components.module';
 import { SidenavService } from './components/sidenav/sidenav.service';
 import { LayoutsModule } from './layouts/layouts.module';
 import { LayoutModule } from '@angular/cdk/layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [AppComponent],
   imports: [

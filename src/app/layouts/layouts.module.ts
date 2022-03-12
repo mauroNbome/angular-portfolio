@@ -6,6 +6,7 @@ import { PortfolioComponent } from './portfolio/portfolio.component';
 import { BlogComponent } from './blog/blog.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { MaterialModule } from '../material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { MaterialModule } from '../material.module';
     BlogComponent,
     ContactMeComponent,
   ],
-  imports: [CommonModule, MaterialModule],
+  imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
   exports: [
     HomeComponent,
     AboutComponent,
