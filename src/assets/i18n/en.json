@@ -1,0 +1,14 @@
+{
+  "header_home": "Home",
+  "header_about": "About",
+  "header_portfolio": "Portfolio",
+  "header_blog": "Blog",
+  "header_contact": "Contact Me",
+  "contact_questions": "Have questions?",
+  "contact_contact": "Contact Me",
+  "contact_name": "Name",
+  "contact_email": "Email",
+  "contact_phone": "Phone",
+  "contact_message": "Your Message",
+  "contact_submit": "Submit"
+}

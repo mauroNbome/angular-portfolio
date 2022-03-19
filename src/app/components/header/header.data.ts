@@ -1,53 +1,28 @@
 export const links = [
   {
-    label: 'Home',
+    label: 'header_home',
     path: '',
     icon: 'home',
-    labels: {
-      es: 'Inicio',
-      en: 'Home',
-      pt: 'Inicio',
-    },
   },
   {
-    label: 'About',
+    label: 'header_about',
     path: 'about',
     icon: 'favorite_border',
-    labels: {
-      es: 'Acerca',
-      en: 'About',
-      pt: 'Sobre',
-    },
   },
   {
-    label: 'Portfolio',
+    label: 'header_portfolio',
     path: 'portfolio',
     icon: 'app_shortcut',
-    labels: {
-      es: 'Portafolio',
-      en: 'Portfolio',
-      pt: 'Portfólio',
-    },
   },
   {
-    label: 'Blog',
+    label: 'header_blog',
     path: 'blog',
     icon: 'rss_feed',
-    labels: {
-      es: 'Blog',
-      en: 'Blog',
-      pt: 'Blog',
-    },
   },
   {
-    label: 'Contact Me',
+    label: 'header_contact',
     path: 'contactme',
     icon: 'contact_page',
-    labels: {
-      es: 'Contactame',
-      en: 'Contact Me',
-      pt: 'Contate-me',
-    },
   },
 ];
 

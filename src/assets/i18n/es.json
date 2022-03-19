@@ -1,0 +1,14 @@
+{
+  "header_home": "Inicio",
+  "header_about": "Acerca",
+  "header_portfolio": "Portfolio",
+  "header_blog": "Blog",
+  "header_contact": "Contactame",
+  "contact_questions": "¿Tienes preguntas?",
+  "contact_contact": "Contactame",
+  "contact_name": "Nombre",
+  "contact_email": "Email",
+  "contact_phone": "Telefono",
+  "contact_message": "Tu mensaje",
+  "contact_submit": "Enviar"
+}

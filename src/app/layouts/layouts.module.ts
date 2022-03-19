@@ -7,6 +7,14 @@ import { BlogComponent } from './blog/blog.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -16,7 +24,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BlogComponent,
     ContactMeComponent,
   ],
-  imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    MaterialModule,
+    FormsModule,
+    ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
+  ],
   exports: [
     HomeComponent,
     AboutComponent,

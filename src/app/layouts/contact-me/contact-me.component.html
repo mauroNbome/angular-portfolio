@@ -1,29 +1,29 @@
 <div class="container fluid main">
   <div class="contact-wrapper">
-    <div class="label1">Have Questions?</div>
+    <div class="label1">{{ "contact_questions" | translate }}</div>
     <div class="separator"></div>
-    <div class="label2">Contact Me!</div>
+    <div class="label2">{{ "contact_contact" | translate }}!</div>
   </div>
-  <div class="row form-wrap">
-    <form [formGroup]="formController">
+  <form [formGroup]="formController">
+    <div class="row form-wrap">
       <div class="col-12 col-md-6">
         <div class="input-wrap">
           <mat-form-field appearance="fill">
-            <mat-label>Name</mat-label>
+            <mat-label>{{ "contact_name" | translate }}</mat-label>
             <input matInput formControlName="name" />
           </mat-form-field>
         </div>
 
         <div class="input-wrap">
           <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
+            <mat-label>{{ "contact_email" | translate }}</mat-label>
             <input matInput formControlName="email" />
           </mat-form-field>
         </div>
 
         <div class="input-wrap">
           <mat-form-field appearance="fill">
-            <mat-label>Phone</mat-label>
+            <mat-label>{{ "contact_phone" | translate }}</mat-label>
             <input matInput formControlName="phone" />
           </mat-form-field>
         </div>
@@ -31,7 +31,7 @@
       <div class="col-12 col-md-6">
         <div class="input-wrap">
           <mat-form-field appearance="fill">
-            <mat-label>Your Message</mat-label>
+            <mat-label>{{ "contact_message" | translate }}</mat-label>
             <textarea
               style="resize: none"
               matInput
@@ -42,8 +42,8 @@
       </div>
 
       <div class="button-container">
-        <button mat-flat-button>Submit</button>
+        <button mat-flat-button>{{ "contact_submit" | translate }}</button>
       </div>
-    </form>
-  </div>
+    </div>
+  </form>
 </div>

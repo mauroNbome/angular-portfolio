@@ -50,6 +50,7 @@ export class UiService implements OnInit {
     this.lang = event;
     this.saveLangToLS();
     this.setFlag();
+    window.location.reload();
   }
 
   setLangFromLS(): void {

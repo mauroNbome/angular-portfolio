@@ -21,7 +21,9 @@
                 {{ item.icon }}
               </mat-icon>
             </div>
-            <div class="label">{{ item.labels[UI.lang] }}</div>
+            <div class="label">
+              {{ item.label | translate }}
+            </div>
           </div>
         </div>
         <div class="footer-sid">
@@ -35,7 +37,6 @@
                 *ngFor="let item of languages"
                 (click)="changeLang(item.value)"
               >
-                <!-- {{ item.label }} -->
                 <img [src]="item.img" width="40" height="40" />
               </button>
             </mat-menu>
