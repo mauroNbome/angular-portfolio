@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../services/http.service';
 import {
   FormBuilder,
   FormControl,
@@ -12,6 +13,7 @@ import {
   styleUrls: ['./contact-me.component.scss'],
 })
 export class ContactMeComponent implements OnInit {
+  fetchingData: boolean = false;
   formController: any;
   footerData = [
     {
@@ -27,30 +29,52 @@ export class ContactMeComponent implements OnInit {
     { icon: 'email', color: '#f84e4f', text: ['mauro3196@gmail.com'] },
   ];
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private service: HttpService) {}
 
   ngOnInit(): void {
+    this.createForm();
+  }
+
+  createForm() {
     this.formController = new FormGroup({
       name: new FormControl('', {
         validators: Validators.required,
-        updateOn: 'blur',
       }),
       email: new FormControl('', {
-        validators: Validators.required,
-        updateOn: 'blur',
+        validators: [
+          Validators.required,
+          Validators.pattern(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+          ),
+        ],
       }),
       phone: new FormControl('', {
         validators: Validators.required,
-        updateOn: 'blur',
       }),
       message: new FormControl('', {
         validators: Validators.required,
-        updateOn: 'blur',
       }),
     });
   }
 
-  submit() {
-    console.log(this.formController);
+  resetForm(): void {
+    this.formController.reset();
+  }
+
+  submit(): void {
+    if (!this.formController.valid) {
+      console.log('not valid');
+      return;
+    }
+
+    this.service.sendMessage().subscribe((resp) => {
+      this.fetchingData = true;
+      setTimeout(() => {
+        this.fetchingData = false;
+        console.log(resp);
+        // display animation with message here.
+        this.resetForm();
+      }, 1500);
+    });
   }
 }

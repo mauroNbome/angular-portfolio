@@ -1,6 +1,4 @@
-.main {
-  min-height: 100%;
-}
+
 
 .contact-wrapper {
   margin: 0 auto 60px auto;
@@ -108,6 +106,11 @@
     -webkit-box-shadow: 2px 9px 15px 7px rgba(222, 160, 30, 0.29);
     -moz-box-shadow: 2px 9px 15px 7px rgba(222, 160, 30, 0.29);
     text-transform: uppercase !important;
+
+    &:disabled {
+      background-color: #6f7072;
+      box-shadow: none;
+    }
   }
 }
 

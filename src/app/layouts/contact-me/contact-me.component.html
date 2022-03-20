@@ -1,6 +1,8 @@
 <div class="container fluid main">
   <div class="contact-wrapper">
-    <div class="label1">{{ "contact_questions" | translate }}</div>
+    <div class="label1">
+      {{ "contact_questions" | translate }}
+    </div>
     <div class="separator"></div>
     <div class="label2">{{ "contact_contact" | translate }}!</div>
   </div>
@@ -9,21 +11,27 @@
       <div class="col-12 col-md-6">
         <div class="input-wrap">
           <mat-form-field appearance="fill">
-            <mat-label>{{ "contact_name" | translate }}</mat-label>
+            <mat-label>
+              {{ "contact_name" | translate }}
+            </mat-label>
             <input matInput formControlName="name" />
           </mat-form-field>
         </div>
 
         <div class="input-wrap">
           <mat-form-field appearance="fill">
-            <mat-label>{{ "contact_email" | translate }}</mat-label>
+            <mat-label>
+              {{ "contact_email" | translate }}
+            </mat-label>
             <input matInput formControlName="email" />
           </mat-form-field>
         </div>
 
         <div class="input-wrap">
           <mat-form-field appearance="fill">
-            <mat-label>{{ "contact_phone" | translate }}</mat-label>
+            <mat-label>
+              {{ "contact_phone" | translate }}
+            </mat-label>
             <input matInput formControlName="phone" />
           </mat-form-field>
         </div>
@@ -31,7 +39,9 @@
       <div class="col-12 col-md-6">
         <div class="input-wrap">
           <mat-form-field appearance="fill">
-            <mat-label>{{ "contact_message" | translate }}</mat-label>
+            <mat-label>
+              {{ "contact_message" | translate }}
+            </mat-label>
             <textarea
               style="resize: none"
               matInput
@@ -42,7 +52,9 @@
       </div>
 
       <div class="button-container">
-        <button mat-flat-button>{{ "contact_submit" | translate }}</button>
+        <button mat-flat-button (click)="submit()" [disabled]="fetchingData">
+          {{ "contact_submit" | translate }}
+        </button>
       </div>
     </div>
   </form>
@@ -59,26 +71,6 @@
           <div class="text-line" *ngFor="let line of item.text">{{ line }}</div>
         </div>
       </div>
-      <!-- <div class="col-12 col-md-4 footer-item">
-        <div class="icontainer">
-          <mat-icon style="color: #4e06fe" class="material-icons-outlined">
-            location_on
-          </mat-icon>
-        </div>
-        <div class="footer-text">
-          <div class="text-line">+5434130723441</div>
-        </div>
-      </div>
-      <div class="col-12 col-md-4 footer-item">
-        <div class="icontainer">
-          <mat-icon style="color: #f84e4f" class="material-icons-outlined">
-            email
-          </mat-icon>
-        </div>
-        <div class="footer-text">
-          <div class="text-line">+5434130723441</div>
-        </div>
-      </div> -->
     </div>
   </div>
 </div>

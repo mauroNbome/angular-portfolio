@@ -4,7 +4,7 @@ import { languages } from '../components/header/header.data';
 @Injectable({
   providedIn: 'root',
 })
-export class UiService implements OnInit {
+export class UiService {
   mobileSize: boolean;
   // Variable to handle current activeLink
   activeLink: string = '';
@@ -15,12 +15,6 @@ export class UiService implements OnInit {
   activeLang: any;
 
   constructor() {}
-
-  ngOnInit(): void {
-    // setLangFromLS()
-    // setColorModeFromLS()
-    // Those are called from header component.
-  }
 
   // Handling of darkmode
   toggleColorMode(): void {
@@ -69,5 +63,10 @@ export class UiService implements OnInit {
         this.activeLang = el;
       }
     });
+  }
+
+  setActiveLinkFromURL(): void {
+    let currentPath = window.location.pathname.substring(1);
+    this.activeLink = currentPath;
   }
 }

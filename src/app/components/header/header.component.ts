@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.UI.setLangFromLS();
     this.UI.setColorModeFromLS();
+    this.UI.setActiveLinkFromURL();
   }
 
   changeLang(event: string): void {
