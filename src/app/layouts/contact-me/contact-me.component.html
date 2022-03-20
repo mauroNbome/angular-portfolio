@@ -46,4 +46,39 @@
       </div>
     </div>
   </form>
+
+  <div class="footer">
+    <div class="row">
+      <div class="col-12 col-md-4 footer-item" *ngFor="let item of footerData">
+        <div class="icontainer">
+          <mat-icon [style.color]="item.color" class="material-icons-outlined">
+            {{ item.icon }}
+          </mat-icon>
+        </div>
+        <div class="footer-text">
+          <div class="text-line" *ngFor="let line of item.text">{{ line }}</div>
+        </div>
+      </div>
+      <!-- <div class="col-12 col-md-4 footer-item">
+        <div class="icontainer">
+          <mat-icon style="color: #4e06fe" class="material-icons-outlined">
+            location_on
+          </mat-icon>
+        </div>
+        <div class="footer-text">
+          <div class="text-line">+5434130723441</div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 footer-item">
+        <div class="icontainer">
+          <mat-icon style="color: #f84e4f" class="material-icons-outlined">
+            email
+          </mat-icon>
+        </div>
+        <div class="footer-text">
+          <div class="text-line">+5434130723441</div>
+        </div>
+      </div> -->
+    </div>
+  </div>
 </div>

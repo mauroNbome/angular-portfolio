@@ -13,6 +13,20 @@ import {
 })
 export class ContactMeComponent implements OnInit {
   formController: any;
+  footerData = [
+    {
+      icon: 'whatsapp',
+      color: '#38a145',
+      text: ['+543413072211', '+543413072211'],
+    },
+    {
+      icon: 'location_on',
+      color: '#4e06fe',
+      text: ['St. Brown 3155', 'Argentina, Rosario', '2000'],
+    },
+    { icon: 'email', color: '#f84e4f', text: ['mauro3196@gmail.com'] },
+  ];
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
