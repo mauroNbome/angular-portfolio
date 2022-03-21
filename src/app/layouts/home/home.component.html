@@ -1,7 +1,48 @@
 <div class="container fluid main">
   <div class="main-hero">
     <div class="row">
-      <div class="col-12"></div>
+      <div class="col-12 col-md-7 left-hero">
+        <div class="welcome-label">WELCOME TO MY WORLD</div>
+        <div class="name-head">Hi, I'm <span>Mauro Ríos</span></div>
+        <div class="subhead">
+          A professional web Developer and UX/UI Designer.
+        </div>
+        <div class="label-description">
+          I have been working since 2019. I am a proficient in web development,
+          ui design, user experience.
+        </div>
+
+        <div class="hero-footer row">
+          <div class="col-12 col-md-6">
+            <div class="footer-item-label">FIND WITH ME</div>
+            <div class="footer-item-container">
+              <div
+                class="footer-box"
+                *ngFor="let item of findWithMe"
+                (click)="goToLink(item.goto)"
+              >
+                <img [src]="item.logo" [alt]="item.alt" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <div class="footer-item-label">BEST SKILLS ON</div>
+            <div class="footer-item-container">
+              <div
+                class="footer-box"
+                *ngFor="let item of bestSkills"
+                (click)="goToLink(item.goto)"
+              >
+                <img [src]="item.logo" [alt]="item.alt" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-5 right-hero">
+        <img src="../../../assets/placeholder-home.png" alt="image-me" />
+      </div>
     </div>
   </div>
 </div>
