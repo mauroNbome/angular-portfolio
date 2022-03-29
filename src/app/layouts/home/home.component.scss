@@ -10,7 +10,7 @@
   }
 
   .name-head {
-    color: #fff;
+    color: #fefefe;
     font-size: 45px;
     font-weight: 600;
 
@@ -20,7 +20,7 @@
   }
 
   .subhead {
-    color: #fff;
+    color: #fefefe;
     font-size: 35px;
     padding-top: 12px;
     font-weight: 600;
@@ -79,13 +79,13 @@
       }
 
       .footer-box + .footer-box {
-        margin-left: 15px;
+        margin-left: 20px;
       }
     }
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .left-hero {
     .welcome-label {
       margin-bottom: 0;
@@ -127,5 +127,88 @@
     box-shadow: 1px 0px 20px 6px rgb(43 46 51 / 75%);
     -webkit-box-shadow: 1px 0px 20px 6px rgb(43 46 51 / 75%);
     -moz-box-shadow: 1px 0px 20px 6px rgb(43 46 51 / 75%);
+  }
+}
+
+.about-me {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column-reverse;
+
+  .left-about-me {
+    margin-top: 50px;
+    img {
+      height: 100%;
+      width: 100%;
+
+      box-shadow: 1px 0px 20px 6px rgb(43 46 51 / 75%);
+      -webkit-box-shadow: 1px 0px 20px 6px rgb(43 46 51 / 75%);
+      -moz-box-shadow: 1px 0px 20px 6px rgb(43 46 51 / 75%);
+    }
+  }
+
+  .right-about-me {
+    text-align: center;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .info-header {
+      font-size: 25px;
+      font-weight: 600;
+      color: #fefefe;
+      padding: 30px 0;
+    }
+
+    .info-description {
+      font-size: 19px;
+      color: #fefefe;
+      font-weight: 400;
+    }
+
+    .info-button-container {
+      width: 100%;
+      height: 70px;
+      margin-top: 50px;
+      button {
+        background-color: #dea01e;
+        color: #fefefe;
+        height: 45px;
+        font-weight: 500;
+        font-size: 18px;
+        box-shadow: 0px 15px 17px 2px rgba(222, 160, 30, 0.29);
+        -webkit-box-shadow: 0px 15px 17px 2px rgba(222, 160, 30, 0.29);
+        -moz-box-shadow: 0px 15px 17px 2px rgba(222, 160, 30, 0.29);
+        text-transform: uppercase !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .about-me {
+    flex-direction: row;
+
+    .left-about-me {
+      margin: 0;
+
+      img {
+      }
+    }
+
+    .right-about-me {
+      padding: 50px;
+
+      .info-header {
+      }
+
+      .info-description {
+      }
+
+      .info-button-container {
+        button {
+        }
+      }
+    }
   }
 }

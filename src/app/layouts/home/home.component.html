@@ -1,20 +1,23 @@
 <div class="container fluid main">
   <div class="main-hero">
     <div class="row">
-      <div class="col-12 col-md-7 left-hero">
-        <div class="welcome-label">WELCOME TO MY WORLD</div>
-        <div class="name-head">Hi, I'm <span>Mauro Ríos</span></div>
+      <div class="col-12 col-lg-7 left-hero">
+        <div class="welcome-label">{{ "home_welcome" | translate }}</div>
+        <div class="name-head">
+          {{ "home_hi" | translate }} <span>Mauro Ríos</span>
+        </div>
         <div class="subhead">
-          A professional web Developer and UX/UI Designer.
+          {{ "home_subhead" | translate }}
         </div>
         <div class="label-description">
-          I have been working since 2019. I am a proficient in web development,
-          ui design, user experience.
+          {{ "home_description" | translate }}
         </div>
 
         <div class="hero-footer row">
-          <div class="col-12 col-md-6">
-            <div class="footer-item-label">FIND WITH ME</div>
+          <div class="col-12 col-lg-6">
+            <div class="footer-item-label">
+              {{ "home_findme" | translate }}
+            </div>
             <div class="footer-item-container">
               <div
                 class="footer-box"
@@ -26,8 +29,10 @@
             </div>
           </div>
 
-          <div class="col-12 col-md-6">
-            <div class="footer-item-label">BEST SKILLS ON</div>
+          <div class="col-12 col-lg-6">
+            <div class="footer-item-label">
+              {{ "home_skills" | translate }}
+            </div>
             <div class="footer-item-container">
               <div
                 class="footer-box"
@@ -40,8 +45,41 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-5 right-hero">
+      <div class="col-12 col-lg-5 right-hero">
         <img src="../../../assets/placeholder-home.png" alt="image-me" />
+      </div>
+    </div>
+  </div>
+
+  <div class="row about-me">
+    <div class="col-12 col-lg-5 left-about-me">
+      <img src="../../../assets/placeholder-home.png" alt="image-me" />
+    </div>
+    <div class="col-12 col-lg-7 right-about-me" style="color: white">
+      <div class="about-me-info">
+        <div class="info-header">
+          {{ "home_who" | translate }}
+        </div>
+        <div class="info-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+          repellat asperiores perspiciatis esse nam explicabo commodi assumenda
+          obcaecati atque necessitatibus velit nihil corporis voluptates
+          voluptate veniam corrupti architecto mollitia impedit!.
+
+          <br />
+          <br />
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste,
+          repellat asperiores perspiciatis esse nam explicabo commodi assumenda
+          obcaecati atque necessitatibus velit nihil corporis voluptates
+          voluptate veniam corrupti architecto mollitia impedit!.
+        </div>
+        <div class="info-button-container">
+          <div class="button-container">
+            <button mat-flat-button>
+              {{ "home_who_download" | translate }}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
