@@ -1,1 +1,32 @@
-<p>portfolio works!</p>
+<div class="container fluid main">
+  <div class="header-wrapper">
+    <div class="label1">List of Projects</div>
+    <div class="separator"></div>
+    <div class="label2">Take a look</div>
+  </div>
+
+  <div class="portfolio-wrapper">
+    <div class="portfolio-item" *ngFor="let item of mockProjects">
+      <div class="pf-item-img-container">
+        <img src="../../../assets/portfolio-placeholder.png" />
+      </div>
+      <div class="pf-item-data">
+        <div class="pf-item-data-upper">
+          <div class="type">{{ item?.type }}</div>
+          <div class="counter">
+            <button mat-icon-button (click)="addToFav(item)">
+              <mat-icon class="material-icons-outlined"
+                >{{ alreadyLiked(item.alreadyLiked) }}
+              </mat-icon>
+            </button>
+
+            <span>{{ item?.likes }}</span>
+          </div>
+        </div>
+        <div class="pf-item-data-lower">
+          {{ item?.title }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
