@@ -57,6 +57,10 @@ export class ContactMeComponent implements OnInit {
     });
   }
 
+  printer(event) {
+    console.log(event);
+  }
+
   resetForm(): void {
     this.formController.reset();
   }

@@ -14,7 +14,11 @@
             <mat-label>
               {{ "contact_name" | translate }}
             </mat-label>
-            <input matInput formControlName="name" />
+            <input
+              matInput
+              formControlName="name"
+              (ngModelChange)="printer($event)"
+            />
           </mat-form-field>
         </div>
 
@@ -32,7 +36,7 @@
             <mat-label>
               {{ "contact_phone" | translate }}
             </mat-label>
-            <input matInput formControlName="phone" />
+            <input matInput formControlName="phone" type="number" />
           </mat-form-field>
         </div>
       </div>

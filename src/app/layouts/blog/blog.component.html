@@ -1,1 +1,42 @@
-<p>blog works!</p>
+<div class="container fluid main">
+  <div class="blog-wrapper">
+    <div class="label1">Recent articles</div>
+    <div class="separator"></div>
+    <div class="label2">Visit My Blog & Keep Your Feedback!</div>
+  </div>
+
+  <div class="blog">
+    <div class="blog-head">
+      <div class="row">
+        <div class="col-12 col-md-6 blog-head-left">
+          <img src="../../../assets/placeholder-home.png" />
+        </div>
+        <div class="col-12 col-md-6 blog-head-right">
+          <div class="blog-head-date">March 10, 2022</div>
+          <div class="blog-head-title">Nice design pattern ilustrated</div>
+          <div class="blog-head-desc">{{ formatDesc(desc, 250) }}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="blog-body">
+      <div class="blog-item" *ngFor="let item of mockProjects">
+        <div class="bg-item-img-container">
+          <div class="head-date">{{ item.date | date: mediumDate }}</div>
+          <img src="../../../assets/team-celebrating.jpeg" />
+        </div>
+        <div class="bg-item-data">
+          <div class="bg-item-title">{{ item?.title }}</div>
+          <div class="bg-item-desc">
+            {{ formatDesc(item?.desc, 80) }}
+          </div>
+          <div class="goto-blog">
+            <button mat-mini-fab>
+              <mat-icon> arrow_forward_ios </mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
