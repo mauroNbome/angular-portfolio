@@ -44,10 +44,10 @@
 
           <div class="button-box">
             <button mat-icon-button (click)="toggleColorMode()">
-              <mat-icon *ngIf="UI.colorMode === 'dark'" class="white-button"
+              <mat-icon *ngIf="UI.darkMode" class="white-button"
                 >dark_mode</mat-icon
               >
-              <mat-icon *ngIf="UI.colorMode === 'light'" class="white-button"
+              <mat-icon *ngIf="!UI.darkMode" class="white-button"
                 >light_mode</mat-icon
               >
             </button>

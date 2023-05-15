@@ -2,8 +2,9 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { SidenavService } from './sidenav.service';
 import { Links } from '../../models/header.models';
 import { links, languages } from '../header/header.data';
-import { UiService } from '../../services/ui.service';
+import { UiService } from '../../services/ui/ui.service';
 import { Router } from '@angular/router';
+import { LanguageService } from 'src/app/services/language/language.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -17,7 +18,8 @@ export class SidenavComponent implements OnInit {
   constructor(
     public SidenavService: SidenavService,
     public UI: UiService,
-    private router: Router
+    private router: Router,
+    private language: LanguageService
   ) {}
 
   ngOnInit(): void {}
@@ -36,6 +38,6 @@ export class SidenavComponent implements OnInit {
   }
 
   changeLang(event: string): void {
-    this.UI.changeLang(event);
+    this.language.changeLang(event);
   }
 }

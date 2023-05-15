@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: var(--text-color);
 
   .label1 {
     font-size: 18px;
@@ -16,7 +16,7 @@
   .separator {
     width: 50px;
     height: 3px;
-    background-color: #dea01e;
+    background-color: var(--contrast-text);
   }
 
   .label2 {
@@ -35,6 +35,7 @@
         img {
           width: 100%;
           height: 380px;
+          object-fit: cover;
         }
       }
 
@@ -42,18 +43,18 @@
         display: flex;
         flex-direction: column;
         .blog-head-date {
-          color: #8e8f91;
+          color: var(--label);
           font-size: 20px;
           padding: 5px 0;
         }
         .blog-head-title {
-          color: #fff;
+          color: var(--text-color);
           font-size: 55px;
           font-weight: 300;
           padding: 5px 0;
         }
         .blog-head-desc {
-          color: #fff;
+          color: var(--text-color);
           font-size: 20px;
           padding: 5px 0;
         }
@@ -69,24 +70,16 @@
     padding: 20px 0;
 
     .blog-item {
-      // only in mobile
       margin: 0 auto;
-      // only in mobile
       height: 405px;
       width: 100%;
       max-width: 300px;
       border-radius: 7px;
-      background: rgb(31, 31, 39);
-      background: linear-gradient(
-        160deg,
-        rgba(31, 31, 39, 1) 0%,
-        rgba(41, 45, 48, 1) 36%,
-        rgba(41, 45, 48, 1) 53%,
-        rgba(35, 38, 43, 1) 100%
-      );
-      box-shadow: 1px 0px 8px 5px rgb(43 46 51 / 75%);
-      -webkit-box-shadow: 1px 0px 8px 5px rgb(43 46 51 / 75%);
-      -moz-box-shadow: 1px 0px 8px 5px rgb(43 46 51 / 75%);
+      background: var(--footer-box-bg);
+      box-shadow: 1px 0px 8px 5px var(--footer-box-shadow);
+      -webkit-box-shadow: 1px 0px 8px 5px var(--footer-box-shadow);
+      -moz-box-shadow: 1px 0px 8px 5px var(--footer-box-shadow);
+      overflow-x: hidden;
 
       .bg-item-img-container {
         width: 100%;
@@ -105,16 +98,11 @@
           padding: 15px 20px;
           height: 35px;
           border-radius: 3px;
-          background: rgb(18, 21, 28);
-          background: linear-gradient(
-            90deg,
-            rgba(18, 21, 28, 1) 0%,
-            rgba(47, 50, 55, 1) 66%,
-            rgba(69, 72, 77, 1) 100%
-          );
-          color: #97989a;
+          background: var(--footer-box-bg);
+          color: var(--label);
           cursor: default;
         }
+
         img {
           width: 100%;
           height: 100%;
@@ -126,13 +114,15 @@
       .bg-item-data {
         padding: 20px;
         position: relative;
+        height: 50%;
+
         .bg-item-title {
-          color: #fff;
+          color: var(--text-color);
           font-size: 20px;
         }
 
         .bg-item-desc {
-          color: #d6d6d8;
+          color: var(--label);
           font-size: 16px;
           padding: 15px 0;
         }
@@ -142,11 +132,12 @@
           bottom: 10px;
           right: 10px;
           z-index: 30;
+
           button {
             width: 30px;
             height: 30px;
             position: relative;
-            background-color: #24272c;
+            background-color: var(--background-color);
 
             mat-icon {
               position: relative;

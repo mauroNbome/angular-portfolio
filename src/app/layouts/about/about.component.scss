@@ -25,13 +25,13 @@
     .info-header {
       font-size: 25px;
       font-weight: 600;
-      color: #fefefe;
+      color: var(--text-color);
       padding: 30px 0;
     }
 
     .info-description {
       font-size: 19px;
-      color: #fefefe;
+      color: var(--text-color);
       font-weight: 400;
     }
 
@@ -40,8 +40,8 @@
       height: 70px;
       margin-top: 50px;
       button {
-        background-color: #dea01e;
-        color: #fefefe;
+        background-color: var(--contrast-color);
+        color: var(--text-color);
         height: 45px;
         font-weight: 500;
         font-size: 18px;

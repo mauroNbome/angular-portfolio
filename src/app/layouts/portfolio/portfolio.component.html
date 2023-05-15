@@ -1,12 +1,14 @@
 <div class="container fluid main">
   <div class="header-wrapper">
-    <div class="label1">List of Projects</div>
+    <div class="label1">
+      {{ "portfolio_list_of_projects" | translate }}
+    </div>
     <div class="separator"></div>
-    <div class="label2">Take a look</div>
+    <div class="label2">{{ "portfolio_take_a_look" | translate }}</div>
   </div>
 
   <div class="portfolio-wrapper">
-    <div class="portfolio-item" *ngFor="let item of mockProjects">
+    <div class="portfolio-item" *ngFor="let item of projects">
       <div class="pf-item-img-container">
         <img src="../../../assets/portfolio-placeholder.png" />
       </div>

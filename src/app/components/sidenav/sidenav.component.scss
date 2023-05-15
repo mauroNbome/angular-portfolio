@@ -1,5 +1,5 @@
 mat-sidenav {
-  background-color: #212429;
+  background-color: var(--background-color);
   width: 65vw;
   max-width: 320px;
 }
@@ -9,7 +9,7 @@ mat-sidenav {
 }
 .header-sid {
   height: 100px;
-  border-bottom: 1px solid #3e4245;
+  border-bottom: 1px solid var(--label);
 }
 
 .body-sid {
@@ -35,7 +35,7 @@ mat-sidenav {
           top: 20%;
           left: 20%;
           font-size: 31px;
-          color: #fff;
+          color: var(--text-color);
         }
       }
       .label {
@@ -44,7 +44,7 @@ mat-sidenav {
         width: 75%;
         padding: 10px;
         font-size: 18px;
-        color: #fff;
+        color: var(--text-color);
       }
     }
   }
@@ -52,8 +52,8 @@ mat-sidenav {
   .footer-sid {
     display: flex;
     justify-content: space-between;
-    background-color: #212429;
-    border-top: 1px solid #3e4245;
+    background-color: var(--background-color);
+    border-top: 1px solid var(--label);
     height: 60px;
     .button-box {
       width: 60px;
@@ -65,7 +65,7 @@ mat-sidenav {
         bottom: 20%;
         left: 15%;
         mat-icon {
-          color: #fff;
+          color: var(--text-color);
           font-size: 24px;
         }
       }
@@ -74,19 +74,19 @@ mat-sidenav {
 }
 
 .active-item {
-  background-color: #dea01e !important;
+  background-color: var(--contrast-text) !important;
   .label {
     // color: #dea01e !important;
-    color: #fff;
+    color: var(--text-color);
   }
   mat-icon {
     // color: #dea01e !important;
-    color: #fff;
+    color: var(--text-color);
   }
 }
 
 ::ng-deep .mat-menu-content {
-  background-color: #282b30;
+  background-color: var(--background-color);
   display: flex;
   align-content: center;
   justify-content: center;
@@ -95,14 +95,15 @@ mat-sidenav {
   -webkit-box-shadow: -1px -1px 33px 4px rgba(42, 45, 52, 0.76);
   -moz-box-shadow: -1px -1px 33px 4px rgba(42, 45, 52, 0.76);
 }
+
 .mat-menu-item {
   display: flex;
   align-content: center;
   justify-content: center;
-  background-color: #282b30;
-  color: #fff;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .white-button {
-  color: #fff;
+  color: var(--text-color);
 }

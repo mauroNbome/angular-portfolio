@@ -19,11 +19,11 @@
     height: 50px;
     cursor: pointer;
     text-align: center;
-    color: #fff;
+    color: var(--text-color);
   }
 
   .active-item {
-    color: #dea01e !important;
+    color: var(--contrast-text) !important;
   }
 }
 
@@ -34,23 +34,29 @@
 mat-toolbar {
   padding: 0 5%;
   height: 100px;
-  background-color: #212429;
+  background-color: var(--background-color);
 }
 
-mat-select {
+::ng-deep mat-select {
   border-radius: 2px;
   width: 50px;
-  background-color: #282b30 !important;
+  background-color: var(--background-color);
 
-  mat-option {
-    padding: 10px 0;
-    width: 100%;
-    background-color: #282b30 !important;
-
-    .mat-active {
-      background-color: red;
-    }
+  .mat-select-panel {
+    background-color: var(--background-color);
   }
+
+  .mat-option {
+    background-color: var(--background-color);
+  }
+}
+
+::ng-deep .mat-select-content.mat-select-content-appearance-fill {
+  background: var(--background-color);
+}
+
+::ng-deep .mat-option.mat-option-appearance-fill {
+  background: var(--background-color);
 }
 
 .lang-container {
@@ -71,5 +77,5 @@ mat-select {
 }
 
 .white-button {
-  color: #fff;
+  color: var(--text-color);
 }

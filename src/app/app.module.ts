@@ -14,6 +14,10 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -24,6 +28,13 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     LayoutsModule,
     LayoutModule,
     HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient],
+      },
+    }),
   ],
   providers: [SidenavService],
   bootstrap: [AppComponent],

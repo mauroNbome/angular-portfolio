@@ -1,29 +1,35 @@
 <div class="container fluid main">
   <div class="blog-wrapper">
-    <div class="label1">Recent articles</div>
+    <div class="label1">{{ "blog_recent_articles" | translate }}</div>
     <div class="separator"></div>
-    <div class="label2">Visit My Blog & Keep Your Feedback!</div>
+    <div class="label2">{{ "blog_visit" | translate }}!</div>
   </div>
 
   <div class="blog">
-    <div class="blog-head">
+    <div class="blog-head" *ngIf="currentSelectedBlog">
       <div class="row">
         <div class="col-12 col-md-6 blog-head-left">
-          <img src="../../../assets/placeholder-home.png" />
+          <img [src]="currentSelectedBlog.image" />
         </div>
         <div class="col-12 col-md-6 blog-head-right">
-          <div class="blog-head-date">March 10, 2022</div>
-          <div class="blog-head-title">Nice design pattern ilustrated</div>
-          <div class="blog-head-desc">{{ formatDesc(desc, 250) }}</div>
+          <div class="blog-head-date">
+            {{ currentSelectedBlog.date | date }}
+          </div>
+          <div class="blog-head-title">
+            {{ currentSelectedBlog.title }}
+          </div>
+          <div class="blog-head-desc">
+            {{ formatDesc(currentSelectedBlog.desc, 250) }}
+          </div>
         </div>
       </div>
     </div>
 
     <div class="blog-body">
-      <div class="blog-item" *ngFor="let item of mockProjects">
+      <div class="blog-item" *ngFor="let item of displayedBlogs">
         <div class="bg-item-img-container">
-          <div class="head-date">{{ item.date | date: mediumDate }}</div>
-          <img src="../../../assets/team-celebrating.jpeg" />
+          <div class="head-date">{{ item.date | date : mediumDate }}</div>
+          <img [src]="item.img" />
         </div>
         <div class="bg-item-data">
           <div class="bg-item-title">{{ item?.title }}</div>
@@ -31,7 +37,7 @@
             {{ formatDesc(item?.desc, 80) }}
           </div>
           <div class="goto-blog">
-            <button mat-mini-fab>
+            <button mat-mini-fab (click)="setBlogToHead(item)">
               <mat-icon> arrow_forward_ios </mat-icon>
             </button>
           </div>

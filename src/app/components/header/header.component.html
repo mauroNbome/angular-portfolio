@@ -21,9 +21,9 @@
   <span class="spacer"></span>
 
   <div class="lang-container" *ngIf="!UI.mobileSize">
-    <img [src]="UI?.activeLang.img" width="40" height="40" />
+    <img [src]="language?.activeLang.img" width="40" height="40" />
 
-    <mat-select [(value)]="UI.lang" [ngClass]="UI.lang">
+    <mat-select appearance="fill" [(value)]="language.lang" [ngClass]="UI.lang">
       <mat-option
         value="option1"
         *ngFor="let lang of languages"
@@ -35,12 +35,8 @@
   </div>
 
   <button mat-icon-button (click)="toggleColorMode()" *ngIf="!UI.mobileSize">
-    <mat-icon *ngIf="UI.colorMode === 'dark'" class="white-button"
-      >dark_mode</mat-icon
-    >
-    <mat-icon *ngIf="UI.colorMode === 'light'" class="white-button"
-      >light_mode</mat-icon
-    >
+    <mat-icon *ngIf="UI.darkMode" class="white-button">dark_mode</mat-icon>
+    <mat-icon *ngIf="!UI.darkMode" class="white-button">light_mode</mat-icon>
   </button>
   <button
     mat-icon-button

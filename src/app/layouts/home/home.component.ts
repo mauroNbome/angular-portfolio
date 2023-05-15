@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SocialMediaLink } from 'src/app/models/home.models';
+import { HttpService } from 'src/app/services/http/http.service';
 
 @Component({
   selector: 'app-home',
@@ -6,44 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  findWithMe = [
-    {
-      alt: 'linkedin-logo',
-      goto: 'http://google.com',
-      logo: '../../../assets/icons/logo-linkedin.svg',
-    },
-    {
-      alt: 'facebook-logo',
-      goto: 'http://google.com',
-      logo: '../../../assets/icons/logo-facebook.svg',
-    },
-    {
-      alt: 'linkedin-logo',
-      goto: 'http://google.com',
-      logo: '../../../assets/icons/logo-instagram.svg',
-    },
-  ];
+  findWithMe: SocialMediaLink[] = [];
 
-  bestSkills = [
-    {
-      alt: 'angular-logo',
-      goto: 'https://angular.io/',
-      logo: '../../../assets/icons/logo-angular.svg',
-    },
-    {
-      alt: 'ionic-logo',
-      goto: 'https://ionicframework.com/',
-      logo: '../../../assets/icons/logo-ionic.svg',
-    },
-    {
-      alt: 'nodejs-logo',
-      goto: 'https://nodejs.org/',
-      logo: '../../../assets/icons/logo-nodejs.svg',
-    },
-  ];
-  constructor() {}
+  bestSkills: SocialMediaLink[] = [];
+  constructor(private service: HttpService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getHomeData();
+  }
+
+  async getHomeData(): Promise<void> {
+    const resp = await this.service.getHomeData().toPromise();
+    this.findWithMe = resp.findWithme;
+    this.bestSkills = resp.bestSkills;
+  }
 
   goToLink(url: string) {
     window.open(url, '_blank');

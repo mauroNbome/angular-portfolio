@@ -3,7 +3,8 @@ import { SidenavService } from '.././sidenav/sidenav.service';
 import { Links } from '../../models/header.models';
 import { Router } from '@angular/router';
 import { links, languages } from './header.data';
-import { UiService } from '../../services/ui.service';
+import { UiService } from '../../services/ui/ui.service';
+import { LanguageService } from 'src/app/services/language/language.service';
 
 @Component({
   selector: 'app-header',
@@ -17,17 +18,14 @@ export class HeaderComponent implements OnInit {
   constructor(
     private sidenav: SidenavService,
     private router: Router,
-    public UI: UiService
+    public UI: UiService,
+    public language: LanguageService
   ) {}
 
-  ngOnInit(): void {
-    this.UI.setLangFromLS();
-    this.UI.setColorModeFromLS();
-    this.UI.setActiveLinkFromURL();
-  }
+  ngOnInit(): void {}
 
   changeLang(event: string): void {
-    this.UI.changeLang(event);
+    this.language.changeLang(event);
   }
 
   toggleSidenav(): void {

@@ -1,4 +1,5 @@
-export const links = [
+import { Links } from '../../models/header.models';
+export const links: Links[] = [
   {
     label: 'header_home',
     path: '',

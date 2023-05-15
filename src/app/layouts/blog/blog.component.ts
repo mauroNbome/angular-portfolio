@@ -1,5 +1,6 @@
-import { NodeWithI18n } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
+import { HttpService } from '../../services/http/http.service';
+import { Blog } from 'src/app/models/blog.models';
 
 @Component({
   selector: 'app-blog',
@@ -7,57 +8,64 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit {
-  desc: string =
-    'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosa  corporis quos, quis voluptates soluta adipisci sed eligendi in officiis excepturi dolorum rem, dignissimos harum sunt. Provident ratione exercitationem illo rerum.';
+  blogs: Blog[];
+  displayedBlogs: Blog[];
+  currentSelectedBlog: Blog;
 
-  mockProjects = [
-    {
-      id: 0,
-      title: 'Mobile App landing design & Services',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias laborum quis error molestias libero culpa expedita illo. Autem molestiae perspiciatis ad, eligendi, et quibusdam incidunt praesentium quae, nulla dignissimos assumenda.',
-      date: Date.now(),
-    },
+  constructor(private httpService: HttpService) {}
 
-    {
-      id: 1,
-      title: 'Mobile App landing design & Services',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias laborum quis error molestias libero culpa expedita illo. Autem molestiae perspiciatis ad, eligendi, et quibusdam incidunt praesentium quae, nulla dignissimos assumenda.',
-      date: Date.now(),
-    },
-
-    {
-      id: 2,
-      title: 'Mobile App landing design & Services',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias laborum quis error molestias libero culpa expedita illo. Autem molestiae perspiciatis ad, eligendi, et quibusdam incidunt praesentium quae, nulla dignissimos assumenda.',
-      date: Date.now(),
-    },
-
-    {
-      id: 3,
-      title: 'Mobile App landing design & Services',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias laborum quis error molestias libero culpa expedita illo. Autem molestiae perspiciatis ad, eligendi, et quibusdam incidunt praesentium quae, nulla dignissimos assumenda.',
-      date: Date.now(),
-    },
-
-    {
-      id: 4,
-      title: 'Mobile App landing design & Services',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias laborum quis error molestias libero culpa expedita illo. Autem molestiae perspiciatis ad, eligendi, et quibusdam incidunt praesentium quae, nulla dignissimos assumenda.',
-      date: Date.now(),
-    },
-    {
-      id: 5,
-      title: 'Mobile App landing design & Services',
-      desc: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias laborum quis error molestias libero culpa expedita illo. Autem molestiae perspiciatis ad, eligendi, et quibusdam incidunt praesentium quae, nulla dignissimos assumenda.',
-      date: Date.now(),
-    },
-  ];
-
-  constructor() {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getBlogs();
+  }
 
   formatDesc(text: string, count: number): string {
     return text.slice(0, count);
+  }
+
+  async getBlogs(): Promise<void> {
+    const resp = await this.httpService.getBlogs().toPromise();
+    this.blogs = resp;
+    this.sortBlogsByDate();
+    this.initializeDisplayedBlogs();
+    this.setCurrentSelectedBlog(this.blogs[0]);
+  }
+
+  sortBlogsByDate(): void {
+    this.blogs.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+  }
+
+  initializeDisplayedBlogs(): void {
+    this.displayedBlogs = this.blogs.filter((el) => el.id !== this.blogs[0].id);
+  }
+
+  setCurrentSelectedBlog(item: Blog): void {
+    this.currentSelectedBlog = item;
+  }
+
+  setBlogToHead(item: Blog): void {
+    this.setCurrentSelectedBlog(item);
+    this.updateDisplayedBlogs(item);
+    this.sortDisplayedBlogsByDate();
+    this.scrollToTop();
+  }
+
+  updateDisplayedBlogs(item: Blog): void {
+    this.displayedBlogs = this.blogs.filter((el) => el.id !== item.id);
+  }
+
+  sortDisplayedBlogsByDate(): void {
+    this.displayedBlogs.sort(
+      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+    );
+  }
+
+  scrollToTop(): void {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
   }
 }

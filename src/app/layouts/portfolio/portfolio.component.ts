@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from 'src/app/models/portfolio.models';
+import { HttpService } from 'src/app/services/http/http.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -6,80 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./portfolio.component.scss'],
 })
 export class PortfolioComponent implements OnInit {
-  mockProjects = [
-    {
-      id: 0,
-      picture: '',
-      type: 'Mobile App',
-      likes: 115,
-      alreadyLiked: false,
-      title: 'Mobile App landing design & Services',
-    },
+  projects: Project[] = [];
 
-    {
-      id: 1,
-      picture: '',
-      type: 'Mobile App',
-      likes: 115,
-      alreadyLiked: false,
-      title: 'Mobile App landing design & Services',
-    },
+  constructor(private service: HttpService) {}
 
-    {
-      id: 2,
-      picture: '',
-      type: 'Mobile App',
-      likes: 115,
-      alreadyLiked: false,
-      title: 'Mobile App landing design & Services',
-    },
+  ngOnInit(): void {
+    this.getProjects();
+  }
 
-    {
-      id: 3,
-      picture: '',
-      type: 'Mobile App',
-      likes: 115,
-      alreadyLiked: true,
-      title: 'Mobile App landing design & Services',
-    },
+  async getProjects() {
+    const resp = await this.service.getMockProjects().toPromise();
+    this.projects = resp;
+  }
 
-    {
-      id: 4,
-      picture: '',
-      type: 'Mobile App',
-      likes: 115,
-      alreadyLiked: false,
-      title: 'Mobile App landing design & Services',
-    },
-    {
-      id: 5,
-      picture: '',
-      type: 'Mobile App',
-      likes: 115,
-      alreadyLiked: false,
-      title: 'Mobile App landing design & Services',
-    },
-  ];
+  addToFav(item: Project) {
+    const project: Project = this.projects.find((el) => el.id === item.id);
 
-  constructor() {}
-
-  ngOnInit(): void {}
-
-  addToFav(item) {
-    console.log(item);
-
-    console.log('in');
-    this.mockProjects.forEach((el) => {
-      if (item.id === el.id) {
-        if (!item.alreadyLiked) {
-          el.likes++;
-          el.alreadyLiked = true;
-        } else {
-          el.likes--;
-          el.alreadyLiked = false;
-        }
+    if (project) {
+      if (!project.alreadyLiked) {
+        project.likes++;
+        project.alreadyLiked = true;
+      } else {
+        project.likes--;
+        project.alreadyLiked = false;
       }
-    });
+    }
   }
 
   alreadyLiked(status: boolean) {

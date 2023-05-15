@@ -3,10 +3,13 @@ body {
   height: 100%;
   overflow: visible;
 }
+
 body {
   height: 100%;
   margin: 0;
   font-family: "Open Sans", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 .row {
@@ -17,13 +20,22 @@ body {
   min-height: 100%;
 }
 
-// Dark main color: #212429;
-// Contrast dark main color: #dea01e;
-// Inspiration:
-// https://dribbble.com/shots/16483224/attachments/11311087?mode=media
+/* Modo claro */
+:root {
+  --background-color: #ecf0f3;
+  --contrast-text: #ff014f;
+  --label: #000;
+  --text-color: black;
+  --footer-box-bg: #ffffff;
+  --footer-box-shadow: rgba(0, 0, 0, 0.15);
+}
 
-// Translation:
-// https://www.youtube.com/watch?v=oxigDfDfD8Q
-
-// Theming:
-// https://www.youtube.com/watch?v=r6Ygw9L55zg
+/* Modo oscuro */
+body.dark-mode {
+  --background-color: #212429;
+  --label: #8e8f91;
+  --contrast-text: #ff014f;
+  --text-color: white;
+  --footer-box-bg: rgb(38, 41, 46);
+  --footer-box-shadow: rgb(43, 46, 51);
+}
