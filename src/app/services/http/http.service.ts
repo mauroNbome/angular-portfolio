@@ -74,16 +74,19 @@ export class HttpService {
           alt: 'linkedin-logo',
           goto: 'http://google.com',
           logo: '../../../assets/icons/logo-linkedin.svg',
+          logo_dark: '../../../assets/icons/logo-linkedin-dark.svg',
         },
         {
           alt: 'facebook-logo',
           goto: 'http://google.com',
           logo: '../../../assets/icons/logo-facebook.svg',
+          logo_dark: '../../../assets/icons/logo-facebook-dark.svg',
         },
         {
           alt: 'linkedin-logo',
           goto: 'http://google.com',
           logo: '../../../assets/icons/logo-instagram.svg',
+          logo_dark: '../../../assets/icons/logo-instagram-dark.svg',
         },
       ],
       bestSkills: [

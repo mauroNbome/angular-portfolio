@@ -24,6 +24,7 @@ body {
 :root {
   --background-color: #ecf0f3;
   --contrast-text: #ff014f;
+  --contrast-text-rgb: rgba(255, 1, 79, 0.29);
   --label: #000;
   --text-color: black;
   --footer-box-bg: #ffffff;
@@ -35,6 +36,7 @@ body.dark-mode {
   --background-color: #212429;
   --label: #8e8f91;
   --contrast-text: #ff014f;
+  --contrast-text-rgb: rgba(255, 1, 79, 0.29);
   --text-color: white;
   --footer-box-bg: rgb(38, 41, 46);
   --footer-box-shadow: rgb(43, 46, 51);

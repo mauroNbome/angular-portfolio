@@ -23,6 +23,10 @@ export class HomeComponent implements OnInit {
     this.bestSkills = resp.bestSkills;
   }
 
+  isLightMode(): boolean {
+    return !document.body.classList.contains('dark-mode');
+  }
+
   goToLink(url: string) {
     window.open(url, '_blank');
   }
