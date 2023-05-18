@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { languages } from '../../components/header/header.data';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root',
@@ -7,14 +8,14 @@ import { languages } from '../../components/header/header.data';
 export class LanguageService {
   lang: string;
   activeLang: any;
-  constructor() {}
+  constructor(private translate: TranslateService) {}
 
   // Handling of languages.
   changeLang(event: string): void {
     this.lang = event;
     this.saveLangToLS();
     this.setFlag();
-    window.location.reload();
+    this.translate.use(event);
   }
 
   setLangFromLS(): void {
@@ -27,7 +28,6 @@ export class LanguageService {
   }
 
   setFlag(): void {
-    console.log(languages);
     languages.forEach((el) => {
       if (el.value === this.lang) {
         this.activeLang = el;
