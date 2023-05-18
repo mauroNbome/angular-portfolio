@@ -14,11 +14,13 @@ import { LanguageService } from 'src/app/services/language/language.service';
 export class HeaderComponent implements OnInit {
   links: Links[] = links;
   languages = languages;
+  logodark = '../../../assets/logo/mauroriosdark.png';
+  logolight = '../../../assets/logo/maurorioslight.png';
 
   constructor(
     private sidenav: SidenavService,
     private router: Router,
-    public UI: UiService,
+    public ui: UiService,
     public language: LanguageService
   ) {}
 
@@ -33,11 +35,11 @@ export class HeaderComponent implements OnInit {
   }
 
   redirectTo(route: string): void {
-    this.UI.activeLink = route;
+    this.ui.activeLink = route;
     this.router.navigate([route]);
   }
 
   toggleColorMode(): void {
-    this.UI.toggleColorMode();
+    this.ui.toggleColorMode();
   }
 }

@@ -59,13 +59,11 @@ mat-toolbar {
   background: var(--background-color);
 }
 
-.lang-container {
-  position: relative;
-
+.logo-container {
   img {
-    position: absolute;
-    top: -5px;
-    right: 21px;
+    cursor: pointer;
+    max-width: 155px; // O cualquier valor que se ajuste mejor a tu diseño
+    height: auto; // Esto mantiene la relación de aspecto de la imagen al cambiar su anchura
   }
 }
 

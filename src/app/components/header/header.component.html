@@ -1,16 +1,16 @@
 <mat-toolbar>
   <div class="logo-container">
     <img
-      src="../../../assets/head-placeholder-dark.png"
+      [src]="ui.isLightMode() ? logolight : logodark"
       routerLink="/"
-      (click)="UI.activeLink = ''"
+      (click)="ui.activeLink = ''"
     />
   </div>
 
-  <div class="menu-items-wrap" *ngIf="!UI.mobileSize">
+  <div class="menu-items-wrap" *ngIf="!ui.mobileSize">
     <div
       class="item"
-      [class.active-item]="item.path === UI.activeLink"
+      [class.active-item]="item.path === ui.activeLink"
       *ngFor="let item of links"
       (click)="redirectTo(item.path)"
     >
@@ -20,10 +20,14 @@
 
   <span class="spacer"></span>
 
-  <div class="lang-container" *ngIf="!UI.mobileSize">
+  <div class="lang-container" *ngIf="!ui.mobileSize">
     <img [src]="language?.activeLang.img" width="40" height="40" />
 
-    <mat-select appearance="fill" [(value)]="language.lang" [ngClass]="UI.lang">
+    <mat-select
+      appearance="fill"
+      [(value)]="language.lang"
+      [ngClass]="language.lang"
+    >
       <mat-option
         value="option1"
         *ngFor="let lang of languages"
@@ -34,15 +38,15 @@
     </mat-select>
   </div>
 
-  <button mat-icon-button (click)="toggleColorMode()" *ngIf="!UI.mobileSize">
-    <mat-icon *ngIf="UI.darkMode" class="white-button">dark_mode</mat-icon>
-    <mat-icon *ngIf="!UI.darkMode" class="white-button">light_mode</mat-icon>
+  <button mat-icon-button (click)="toggleColorMode()" *ngIf="!ui.mobileSize">
+    <mat-icon *ngIf="ui.darkMode" class="white-button">dark_mode</mat-icon>
+    <mat-icon *ngIf="!ui.darkMode" class="white-button">light_mode</mat-icon>
   </button>
   <button
     mat-icon-button
     class="white-button"
     (click)="toggleSidenav()"
-    *ngIf="UI.mobileSize"
+    *ngIf="ui.mobileSize"
   >
     <mat-icon>menu</mat-icon>
   </button>

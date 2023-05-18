@@ -7,12 +7,20 @@
     [fixedInViewport]="true"
   >
     <div class="main-wrap">
-      <div class="header-sid"></div>
+      <div class="header-sid">
+        <div class="logo-container-sidenav">
+          <img
+            [src]="ui.isLightMode() ? logolight : logodark"
+            routerLink="/"
+            (click)="ui.activeLink = ''"
+          />
+        </div>
+      </div>
       <div class="body-sid">
         <div class="menu-items">
           <div
             class="menu-item"
-            [class.active-item]="item.path === UI.activeLink"
+            [class.active-item]="item.path === ui.activeLink"
             (click)="redirectTo(item.path)"
             *ngFor="let item of links"
           >
@@ -44,10 +52,10 @@
 
           <div class="button-box">
             <button mat-icon-button (click)="toggleColorMode()">
-              <mat-icon *ngIf="UI.darkMode" class="white-button"
+              <mat-icon *ngIf="ui.darkMode" class="white-button"
                 >dark_mode</mat-icon
               >
-              <mat-icon *ngIf="!UI.darkMode" class="white-button"
+              <mat-icon *ngIf="!ui.darkMode" class="white-button"
                 >light_mode</mat-icon
               >
             </button>

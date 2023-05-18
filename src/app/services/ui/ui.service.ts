@@ -75,4 +75,8 @@ export class UiService {
       }
     }
   }
+
+  isLightMode(): boolean {
+    return !document.body.classList.contains('dark-mode');
+  }
 }

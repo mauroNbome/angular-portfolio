@@ -15,9 +15,12 @@ export class SidenavComponent implements OnInit {
   links: Links[] = links;
   languages = languages;
 
+  logodark = '../../../assets/logo/mauroriosdark.png';
+  logolight = '../../../assets/logo/maurorioslight.png';
+
   constructor(
     public SidenavService: SidenavService,
-    public UI: UiService,
+    public ui: UiService,
     private router: Router,
     private language: LanguageService
   ) {}
@@ -25,7 +28,7 @@ export class SidenavComponent implements OnInit {
   ngOnInit(): void {}
 
   redirectTo(route: string): void {
-    this.UI.activeLink = route;
+    this.ui.activeLink = route;
     this.router.navigate([route]);
 
     setTimeout(() => {
@@ -34,7 +37,7 @@ export class SidenavComponent implements OnInit {
   }
 
   toggleColorMode(): void {
-    this.UI.toggleColorMode();
+    this.ui.toggleColorMode();
   }
 
   changeLang(event: string): void {
