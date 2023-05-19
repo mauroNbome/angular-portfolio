@@ -90,21 +90,24 @@ mat-sidenav {
 .active-item {
   background-color: var(--contrast-text) !important;
   .label {
-    // color: #dea01e !important;
     color: var(--text-color);
   }
   mat-icon {
-    // color: #dea01e !important;
     color: var(--text-color);
   }
 }
 
+.menu-item-active {
+  background-color: #39424e !important;
+  border-radius: 6px;
+}
+
+// Esto modifica el mat-menu (ex, language).
 ::ng-deep .mat-menu-content {
   background-color: var(--background-color);
-  display: flex;
   align-content: center;
-  justify-content: center;
-
+  justify-items: center;
+  display: flex;
   box-shadow: -1px -1px 33px 4px rgba(42, 45, 52, 0.76);
   -webkit-box-shadow: -1px -1px 33px 4px rgba(42, 45, 52, 0.76);
   -moz-box-shadow: -1px -1px 33px 4px rgba(42, 45, 52, 0.76);
@@ -112,7 +115,7 @@ mat-sidenav {
 
 .mat-menu-item {
   display: flex;
-  align-content: center;
+  align-items: center;
   justify-content: center;
   background-color: var(--background-color);
   color: var(--text-color);

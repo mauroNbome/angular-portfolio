@@ -8,7 +8,10 @@ import { TranslateService } from '@ngx-translate/core';
 export class LanguageService {
   lang: string;
   activeLang: any;
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService) {
+    this.lang = translate.currentLang || 'en';
+    this.setFlag();
+  }
 
   // Handling of languages.
   changeLang(event: string): void {

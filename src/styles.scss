@@ -42,3 +42,18 @@ body.dark-mode {
   --footer-box-bg: rgb(38, 41, 46);
   --footer-box-shadow: rgb(43, 46, 51);
 }
+
+// Esto modifica el mat-menu (ex, language).
+::ng-deep .mat-menu-content {
+  background-color: var(--background-color);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  box-shadow: -1px -1px 33px 4px rgba(42, 45, 52, 0.76);
+  -webkit-box-shadow: -1px -1px 33px 4px rgba(42, 45, 52, 0.76);
+  -moz-box-shadow: -1px -1px 33px 4px rgba(42, 45, 52, 0.76);
+}
+
+.mat-menu-panel {
+  width: 218px !important;
+}

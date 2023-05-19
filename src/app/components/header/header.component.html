@@ -20,28 +20,29 @@
 
   <span class="spacer"></span>
 
-  <div class="lang-container" *ngIf="!ui.mobileSize">
-    <img [src]="language?.activeLang.img" width="40" height="40" />
+  <div class="header-rightside-container" *ngIf="!ui.mobileSize">
+    <div class="button-box">
+      <button mat-icon-button [matMenuTriggerFor]="aboveMenu">
+        <img [src]="language?.activeLang.img" width="40" height="40" />
+      </button>
+      <mat-menu #aboveMenu="matMenu" yPosition="above">
+        <button
+          mat-menu-item
+          class="menu-item-active"
+          *ngFor="let item of languages"
+          (click)="changeLang(item.value)"
+          [ngClass]="{ 'menu-item-active': item.value === language.lang }"
+        >
+          <img [src]="item.img" width="40" height="40" />
+        </button>
+      </mat-menu>
+    </div>
 
-    <mat-select
-      appearance="fill"
-      [(value)]="language.lang"
-      [ngClass]="language.lang"
-    >
-      <mat-option
-        value="option1"
-        *ngFor="let lang of languages"
-        (click)="changeLang(lang?.value)"
-      >
-        <img with="40" height="40" [src]="lang?.img" />
-      </mat-option>
-    </mat-select>
+    <button mat-icon-button (click)="toggleColorMode()" *ngIf="!ui.mobileSize">
+      <mat-icon *ngIf="ui.darkMode" class="white-button">dark_mode</mat-icon>
+      <mat-icon *ngIf="!ui.darkMode" class="white-button">light_mode</mat-icon>
+    </button>
   </div>
-
-  <button mat-icon-button (click)="toggleColorMode()" *ngIf="!ui.mobileSize">
-    <mat-icon *ngIf="ui.darkMode" class="white-button">dark_mode</mat-icon>
-    <mat-icon *ngIf="!ui.darkMode" class="white-button">light_mode</mat-icon>
-  </button>
   <button
     mat-icon-button
     class="white-button"

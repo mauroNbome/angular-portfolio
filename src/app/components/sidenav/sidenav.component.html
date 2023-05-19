@@ -44,6 +44,7 @@
                 mat-menu-item
                 *ngFor="let item of languages"
                 (click)="changeLang(item.value)"
+                [ngClass]="{ 'menu-item-active': item.value === language.lang }"
               >
                 <img [src]="item.img" width="40" height="40" />
               </button>
