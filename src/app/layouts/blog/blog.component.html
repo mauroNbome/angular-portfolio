@@ -38,7 +38,9 @@
           </div>
           <div class="goto-blog">
             <button mat-mini-fab (click)="setBlogToHead(item)">
-              <mat-icon> arrow_forward_ios </mat-icon>
+              <mat-icon [style.color]="ui.isLightMode() ? 'black' : 'white'">
+                arrow_forward_ios
+              </mat-icon>
             </button>
           </div>
         </div>

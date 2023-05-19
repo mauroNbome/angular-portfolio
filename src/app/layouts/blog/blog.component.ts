@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../../services/http/http.service';
 import { Blog } from 'src/app/models/blog.models';
+import { UiService } from 'src/app/services/ui/ui.service';
 
 @Component({
   selector: 'app-blog',
@@ -12,7 +13,7 @@ export class BlogComponent implements OnInit {
   displayedBlogs: Blog[];
   currentSelectedBlog: Blog;
 
-  constructor(private httpService: HttpService) {}
+  constructor(private httpService: HttpService, public ui: UiService) {}
 
   ngOnInit(): void {
     this.getBlogs();
