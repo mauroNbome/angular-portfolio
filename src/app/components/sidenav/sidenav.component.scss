@@ -98,7 +98,7 @@ mat-sidenav {
 }
 
 .menu-item-active {
-  background-color: #39424e !important;
+  background-color: var(--contrast-active-flag) !important;
   border-radius: 6px;
 }
 
