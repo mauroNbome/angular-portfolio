@@ -35,6 +35,9 @@ mat-toolbar {
   padding: 0 5%;
   height: 100px;
   background-color: var(--background-color);
+  position: fixed; // Añade esta línea
+  width: 100%; // Asegúrate de que el ancho sea del 100% para cubrir todo el ancho de la pantalla
+  z-index: 1; // Ajusta el z-index según sea necesario para asegurarte de que el header está encima de los demás elementos
 }
 
 ::ng-deep mat-select {
