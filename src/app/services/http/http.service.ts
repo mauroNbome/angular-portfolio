@@ -96,6 +96,11 @@ export class HttpService {
           logo: '../../../assets/icons/logo-angular.svg',
         },
         {
+          alt: 'react-logo',
+          goto: 'https://react.dev/',
+          logo: '../../../assets/icons/logo-react.svg',
+        },
+        {
           alt: 'ionic-logo',
           goto: 'https://ionicframework.com/',
           logo: '../../../assets/icons/logo-ionic.svg',

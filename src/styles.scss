@@ -8,6 +8,7 @@
   --footer-box-bg: #ffffff;
   --footer-box-shadow: rgba(0, 0, 0, 0.15);
   --contrast-active-flag: #8a8a8a;
+  --home-items: #ffffff;
 }
 
 /* Modo oscuro */
@@ -20,6 +21,12 @@ body.dark-mode {
   --footer-box-bg: rgb(38, 41, 46);
   --footer-box-shadow: rgb(43, 46, 51);
   --contrast-active-flag: #8a8a8a;
+  --home-items: linear-gradient(
+    119deg,
+    rgba(25, 28, 35, 1) 0%,
+    rgba(31, 35, 41, 1) 59%,
+    rgba(39, 43, 47, 1) 100%
+  );
 }
 
 html,
