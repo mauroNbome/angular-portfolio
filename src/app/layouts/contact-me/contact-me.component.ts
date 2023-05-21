@@ -17,7 +17,7 @@ export class ContactMeComponent implements OnInit {
   formController: any;
   footerData = [
     {
-      icon: 'whatsapp',
+      icon: 'call',
       color: '#38a145',
       text: ['+543413072211', '+543413072211'],
     },

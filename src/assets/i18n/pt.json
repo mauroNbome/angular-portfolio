@@ -20,6 +20,14 @@
   "blog_recent_articles": "Artigos recentes",
   "blog_visit": "Visite meu blog e mantenha seus comentários",
 
+  "contact_questions": "Tem perguntas?",
+  "contact_contact": "Contate-me",
+  "contact_name": "Nome",
+  "contact_email": "Email",
+  "contact_phone": "Telefone",
+  "contact_message": "Sua mensagem",
+  "contact_submit": "Enviar",
+
   "login_welcome": "Bem-vindo de volta",
   "login_welcome2": "Insira suas credenciais",
   "login_user": "Usuário",
