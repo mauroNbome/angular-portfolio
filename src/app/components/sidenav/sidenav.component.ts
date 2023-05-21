@@ -1,10 +1,17 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { SidenavService } from './sidenav.service';
 import { Links } from '../../models/header.models';
 import { links, languages } from '../header/header.data';
 import { UiService } from '../../services/ui/ui.service';
 import { Router } from '@angular/router';
 import { LanguageService } from 'src/app/services/language/language.service';
+import { MatSidenavContainer } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-sidenav',

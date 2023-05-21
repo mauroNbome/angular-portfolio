@@ -8,7 +8,9 @@
   --footer-box-bg: #ffffff;
   --footer-box-shadow: rgba(0, 0, 0, 0.15);
   --contrast-active-flag: #8a8a8a;
-  --home-items: #ffffff;
+  --home-items-gradient: #ffffff;
+  --contact-inputs-gradient: #ffffff;
+  --portfolio-items-gradient: #ffffff;
 }
 
 /* Modo oscuro */
@@ -21,11 +23,22 @@ body.dark-mode {
   --footer-box-bg: rgb(38, 41, 46);
   --footer-box-shadow: rgb(43, 46, 51);
   --contrast-active-flag: #8a8a8a;
-  --home-items: linear-gradient(
+  --home-items-gradient: linear-gradient(
     119deg,
     rgba(25, 28, 35, 1) 0%,
     rgba(31, 35, 41, 1) 59%,
     rgba(39, 43, 47, 1) 100%
+  );
+  --contact-inputs-gradient: linear-gradient(
+    119deg,
+    rgba(24, 27, 34, 1) 4%,
+    rgba(40, 43, 48, 1) 100%
+  );
+  --portfolio-items-gradient: linear-gradient(
+    162deg,
+    rgba(9, 4, 18, 1) 4%,
+    rgba(60, 61, 66, 1) 82%,
+    rgba(73, 76, 79, 1) 100%
   );
 }
 

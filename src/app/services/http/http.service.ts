@@ -9,6 +9,10 @@ import { Project } from '../../models/portfolio.models';
 export class HttpService {
   constructor() {}
 
+  login(user: any) {
+    return of({ status: 'ok', message: 'login succesfull' });
+  }
+
   sendMessage(): any {
     const mockAPIResponse = {
       status: 'ok',
@@ -65,6 +69,10 @@ export class HttpService {
     ];
 
     return of(mockBlogs);
+  }
+
+  createBlog(blog: any): any {
+    return of({ status: 'ok', message: 'blog created succesfully.' });
   }
 
   getHomeData(): Observable<HomeData> {

@@ -1,0 +1,40 @@
+<div class="container fluid main">
+  <div class="blog-wrapper">
+    <div class="label1">Crear un nuevo Blog</div>
+    <div class="separator"></div>
+  </div>
+
+  <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="title">Título</label>
+      <input
+        type="text"
+        formControlName="title"
+        id="title"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="image">Imagen URL</label>
+      <input
+        type="text"
+        formControlName="image"
+        id="image"
+        class="form-control"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="desc">Descripción</label>
+      <textarea
+        formControlName="desc"
+        id="desc"
+        class="form-control"
+        rows="3"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+  </form>
+</div>

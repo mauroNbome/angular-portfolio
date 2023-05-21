@@ -5,6 +5,8 @@ import { PortfolioComponent } from './layouts/portfolio/portfolio.component';
 import { AboutComponent } from './layouts/about/about.component';
 import { BlogComponent } from './layouts/blog/blog.component';
 import { ContactMeComponent } from './layouts/contact-me/contact-me.component';
+import { CreateBlogComponent } from './layouts/admin/create-blog/create-blog.component';
+import { LoginComponent } from './layouts/admin/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +14,8 @@ const routes: Routes = [
   { path: 'portfolio', component: PortfolioComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'contactme', component: ContactMeComponent },
+  { path: 'admin/login', component: LoginComponent },
+  { path: 'admin/createblog', component: CreateBlogComponent },
   { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 

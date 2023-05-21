@@ -64,6 +64,7 @@
   // mat-label focused style
   .mat-form-field.mat-focused .mat-form-field-label {
     color: var(--contrast-text) !important;
+    background: var(--contact-inputs-gradient);
   }
 
   // mat-input focused color
@@ -78,7 +79,7 @@
 
   // Color of mat form.
   .mat-form-field-appearance-fill .mat-form-field-flex {
-    background: var(--footer-box-bg);
+    background: var(--contact-inputs-gradient);
   }
 
   // placeholder color

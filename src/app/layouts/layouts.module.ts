@@ -8,6 +8,8 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { CreateBlogComponent } from './admin/create-blog/create-blog.component';
+import { LoginComponent } from './admin/login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { TranslateModule } from '@ngx-translate/core';
     PortfolioComponent,
     BlogComponent,
     ContactMeComponent,
+    CreateBlogComponent,
+    LoginComponent,
   ],
   imports: [
     CommonModule,

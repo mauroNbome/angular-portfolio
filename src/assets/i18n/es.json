@@ -26,5 +26,11 @@
   "contact_email": "Email",
   "contact_phone": "Telefono",
   "contact_message": "Tu mensaje",
-  "contact_submit": "Enviar"
+  "contact_submit": "Enviar",
+
+  "login_welcome": "Bienvenido otra vez",
+  "login_welcome2": "ingrese sus credenciales",
+  "login_user": "Usuario",
+  "login_password": "Contraseña",
+  "login_button": "Acceder"
 }

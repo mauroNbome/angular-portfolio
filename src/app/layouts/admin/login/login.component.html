@@ -1,0 +1,38 @@
+<div class="container-fluid main">
+  <div class="login-wrapper">
+    <div class="label1">
+      {{ "login_welcome" | translate }}
+    </div>
+    <div class="separator"></div>
+    <div class="label2">{{ "login_welcome2" | translate }}</div>
+  </div>
+  <form [formGroup]="formController">
+    <div class="row form-wrap">
+      <div class="col-12 col-md-6">
+        <div class="input-wrap">
+          <mat-form-field appearance="fill">
+            <mat-label>
+              {{ "login_user" | translate }}
+            </mat-label>
+            <input matInput formControlName="username" />
+          </mat-form-field>
+        </div>
+
+        <div class="input-wrap">
+          <mat-form-field appearance="fill">
+            <mat-label>
+              {{ "login_password" | translate }}
+            </mat-label>
+            <input matInput formControlName="password" type="password" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="button-container">
+        <button mat-flat-button (click)="submit()" [disabled]="fetchingData">
+          {{ "login_button" | translate }}
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

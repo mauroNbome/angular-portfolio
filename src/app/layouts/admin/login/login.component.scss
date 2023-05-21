@@ -1,0 +1,100 @@
+.login-wrapper {
+  margin: 70px auto 60px auto;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+
+  .label1 {
+    font-size: 18px;
+    padding: 8px;
+  }
+
+  .separator {
+    width: 50px;
+    height: 3px;
+    background-color: var(--contrast-text);
+  }
+
+  .label2 {
+    font-size: 20px;
+    padding: 5px;
+  }
+}
+
+.form-wrap {
+  margin-top: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  mat-form-field {
+    width: 100%;
+
+    input,
+    textarea {
+      color: var(--text-color);
+    }
+  }
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70px;
+  margin-bottom: 20px;
+  button {
+    background-color: var(--contrast-text);
+    color: var(--background-color);
+    height: 45px;
+    font-weight: 500;
+    font-size: 18px;
+    box-shadow: 0px 15px 17px 2px var(--contrast-text-rgb);
+    -webkit-box-shadow: 0px 15px 17px 2px var(--contrast-text-rgb);
+    -moz-box-shadow: 0px 15px 17px 2px var(--contrast-text-rgb);
+    text-transform: uppercase !important;
+
+    &:disabled {
+      background-color: var(--label);
+      box-shadow: none;
+    }
+  }
+}
+
+::ng-deep {
+  // mat-label focused style
+  .mat-form-field.mat-focused .mat-form-field-label {
+    color: var(--contrast-text) !important;
+    background: var(--contact-inputs-gradient);
+  }
+
+  // mat-input focused color
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: var(--contrast-text) !important;
+  }
+
+  // border bottom line
+  .mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: var(--contrast-text) !important;
+  }
+
+  // Color of mat form.
+  .mat-form-field-appearance-fill .mat-form-field-flex {
+    background: var(--contact-inputs-gradient);
+  }
+
+  // placeholder color
+  mat-form-field {
+    .mat-hint,
+    input,
+    ::placeholder,
+    .mat-form-field-label {
+      color: var(--label);
+    }
+  }
+}
